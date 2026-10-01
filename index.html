@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lumière Interior | Interior Design Blog</title>
+
+    <meta name="description" content="Lumière Interior adalah blog tentang inspirasi desain interior, dekorasi rumah, dan tips menciptakan ruang yang nyaman dan elegan.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fff8fc;
+            color: #403544;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(150, 100, 150, 0.08);
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #9b6aa8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #59475e;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #c477a2;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 520px;
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: linear-gradient(135deg, #f9dce9, #eadcf7, #fff5e9);
+        }
+
+        .hero-text {
+            max-width: 580px;
+        }
+
+        .hero-text span {
+            color: #9a6aa6;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 58px;
+            line-height: 1.15;
+            margin: 18px 0;
+            color: #5c4563;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #6b5b6d;
+            margin-bottom: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #b77dbb;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #965f9d;
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            width: 390px;
+            height: 390px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #ffffff, #f3e5f5);
+            box-shadow: 0 20px 50px rgba(110, 70, 120, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #bd7ba4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            color: #59455f;
+            margin-top: 10px;
+        }
+
+        /* BLOG GRID */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .post {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(120, 70, 120, 0.08);
+            transition: 0.3s;
+        }
+
+        .post:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(120, 70, 120, 0.13);
+        }
+
+        .post-image {
+            height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+        }
+
+        .pink {
+            background: #f8dce9;
+        }
+
+        .purple {
+            background: #e7daf5;
+        }
+
+        .cream {
+            background: #f8ecd9;
+        }
+
+        .rose {
+            background: #f3d7df;
+        }
+
+        .post-content {
+            padding: 28px;
+        }
+
+        .label {
+            display: inline-block;
+            background: #f3ddeb;
+            color: #955d82;
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .post h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            color: #59445e;
+            margin-bottom: 12px;
+        }
+
+        .post p {
+            color: #756879;
+            margin-bottom: 18px;
+        }
+
+        .read-more {
+            color: #9c649e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #f4e8f6;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-family: Georgia, serif;
+            color: #5b4561;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #665969;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(100, 70, 110, 0.08);
+            font-family: Georgia, serif;
+            font-size: 24px;
+            color: #896291;
+            text-align: center;
+        }
+
+        /* BUSINESS */
+        .business {
+            background: #fffaf4;
+        }
+
+        .business-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .business h2 {
+            text-align: center;
+            font-family: Georgia, serif;
+            color: #5b4561;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .business-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #6d5f6d;
+        }
+
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tool {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(100, 70, 100, 0.07);
+        }
+
+        .tool h3 {
+            color: #91609a;
+            margin-bottom: 10px;
+        }
+
+        .tool p {
+            color: #6d626d;
+            font-size: 14px;
+        }
+
+        /* COMMENTS */
+        .comments {
+            background: #f8e9f1;
+        }
+
+        .comment-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(100, 70, 100, 0.08);
+        }
+
+        .comment-box h2 {
+            font-family: Georgia, serif;
+            color: #5d4663;
+            margin-bottom: 10px;
+        }
+
+        .comment-box p {
+            color: #766879;
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #e6d4e6;
+            border-radius: 10px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #b77dbb;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #59455f;
+            color: #f8edf8;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #dbcddf;
+            font-size: 14px;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #cbbbcf;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-card {
+                width: 280px;
+                height: 280px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .tools {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Lumière Interior</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#business">Business</a></li>
+            <li><a href="#comments">Comments</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <span>Interior Design • Home • Lifestyle</span>
+
+            <h1>
+                Create a Space
+                You Love to Live In.
+            </h1>
+
+            <p>
+                Selamat datang di Lumière Interior,
+                sebuah blog yang membahas inspirasi desain interior,
+                dekorasi rumah, dan tips menciptakan ruangan
+                yang nyaman, elegan, dan memiliki karakter.
+            </p>
+
+            <a href="#blog" class="button">
+                Explore Our Blog
+            </a>
+
+        </div>
+
+        <div class="hero-card">
+            🛋️
+        </div>
+
+    </section>
+
+
+    <!-- BLOG POSTS -->
+    <section id="blog">
+
+        <div class="section-title">
+
+            <span>Latest Articles</span>
+
+            <h2>Interior Inspiration</h2>
+
+        </div>
+
+
+        <div class="blog-grid">
+
+
+            <!-- POST 1 -->
+            <article class="post">
+
+                <div class="post-image pink">
+                    🛋️
+                </div>
+
+                <div class="post-content">
+
+                    <span class="label">
+                        Living Room
+                    </span>
+
+                    <h3>
+                        5 Cara Membuat Ruang Tamu Terlihat Elegan
+                    </h3>
+
+                    <p>
+                        Ruang tamu merupakan salah satu area penting
+                        di dalam rumah. Dengan pemilihan warna,
+                        furnitur, pencahayaan, dan dekorasi yang tepat,
+                        ruangan sederhana dapat terlihat lebih elegan.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read Article →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 2 -->
+            <article class="post">
+
+                <div class="post-image purple">
+                    🛏️
+                </div>
+
+                <div class="post-content">
+
+                    <span class="label">
+                        Bedroom
+                    </span>
+
+                    <h3>
+                        Soft Pink & Lavender untuk Kamar Tidur
+                    </h3>
+
+                    <p>
+                        Kombinasi warna soft pink dan lavender dapat
+                        menciptakan suasana kamar yang lembut,
+                        tenang, dan nyaman. Warna ini cocok untuk
+                        konsep interior modern dan minimalis.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read Article →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 3 -->
+            <article class="post">
+
+                <div class="post-image cream">
+                    🍽️
+                </div>
+
+                <div class="post-content">
+
+                    <span class="label">
+                        Kitchen
+                    </span>
+
+                    <h3>
+                        Dapur Minimalis yang Cantik dan Fungsional
+                    </h3>
+
+                    <p>
+                        Dapur tidak hanya menjadi tempat memasak,
+                        tetapi juga dapat menjadi bagian menarik
+                        dari desain rumah. Gunakan penyimpanan
+                        yang efisien dan warna yang harmonis.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read Article →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 4 -->
+            <article class="post">
+
+                <div class="post-image rose">
+                    🌷
+                </div>
+
+                <div class="post-content">
+
+                    <span class="label">
+                        Decor
+                    </span>
+
+                    <h3>
+                        Ide Dekorasi untuk Rumah yang Lebih Personal
+                    </h3>
+
+                    <p>
+                        Dekorasi membuat sebuah rumah terasa lebih
+                        personal. Foto, tanaman, karya seni, dan
+                        aksesori favorit dapat digunakan untuk
+                        mencerminkan kepribadian pemilik rumah.
+                    </p>
+
+                    <a href="#" class="read-more">
+                        Read Article →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <div>
+
+                <h2>
+                    About Lumière Interior
+                </h2>
+
+                <p>
+                    Lumière Interior adalah blog yang dibuat untuk
+                    berbagi inspirasi mengenai desain interior,
+                    dekorasi rumah, dan lifestyle.
+                </p>
+
+                <p>
+                    Blog ini ditujukan bagi pembaca yang ingin
+                    menciptakan ruang yang nyaman, indah, dan
+                    sesuai dengan karakter pribadi mereka.
+                </p>
+
+                <p>
+                    Kami percaya bahwa desain interior bukan hanya
+                    tentang keindahan, tetapi juga tentang bagaimana
+                    sebuah ruang dapat memberikan kenyamanan
+                    bagi penghuninya.
+                </p>
+
+            </div>
+
+            <div class="quote">
+
+                “Your home should tell
+                the story of who you are.”
+
+                <br><br>
+
+                ✦
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUSINESS -->
+    <section class="business" id="business">
+
+        <div class="business-container">
+
+            <h2>
+                Business Potential
+            </h2>
+
+            <p class="business-intro">
+
+                Blog Lumière Interior dapat dimanfaatkan oleh
+                perusahaan yang menjual produk atau layanan
+                desain interior, furnitur, dekorasi rumah,
+                lighting, dan home accessories.
+
+                Blog dapat membantu perusahaan memperkenalkan
+                produk, memberikan informasi kepada pelanggan,
+                membangun brand awareness, dan meningkatkan
+                hubungan dengan konsumen.
+
+            </p>
+
+
+            <div class="tools">
+
+                <div class="tool">
+
+                    <h3>📝 Blog Posts</h3>
+
+                    <p>
+                        Digunakan untuk memberikan informasi,
+                        tips desain, serta mempromosikan produk
+                        dan layanan perusahaan.
+                    </p>
+
+                </div>
+
+
+                <div class="tool">
+
+                    <h3>🏷️ Labels</h3>
+
+                    <p>
+                        Membantu mengelompokkan artikel berdasarkan
+                        kategori seperti Bedroom, Kitchen,
+                        Living Room, dan Decor.
+                    </p>
+
+                </div>
+
+
+                <div class="tool">
+
+                    <h3>🖼️ Images</h3>
+
+                    <p>
+                        Menampilkan inspirasi desain dan produk
+                        sehingga pelanggan dapat melihat
+                        tampilan produk secara visual.
+                    </p>
+
+                </div>
+
+
+                <div class="tool">
+
+                    <h3>💬 Comments</h3>
+
+                    <p>
+                        Memberikan kesempatan kepada pengunjung
+                        untuk memberikan komentar, pertanyaan,
+                        dan feedback.
+                    </p>
+
+                </div>
+
+
+                <div class="tool">
+
+                    <h3>🔗 Links</h3>
+
+                    <p>
+                        Dapat digunakan untuk mengarahkan
+                        pengunjung menuju website perusahaan,
+                        katalog produk, atau toko online.
+                    </p>
+
+                </div>
+
+
+                <div class="tool">
+
+                    <h3>📊 Analytics</h3>
+
+                    <p>
+                        Data pengunjung dapat digunakan untuk
+                        mengetahui artikel dan konten yang
+                        paling menarik bagi pelanggan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMMENTS -->
+    <section class="comments" id="comments">
+
+        <div class="comment-box">
+
+            <h2>
+                Leave a Comment
+            </h2>
+
+            <p>
+                Bagikan pendapat atau inspirasi desain interior
+                favorit kamu.
+            </p>
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Nama kamu"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <textarea
+                    placeholder="Tulis komentar kamu..."
+                    required
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="button"
+                >
+                    Submit Comment
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>
+            Lumière Interior
+        </h3>
+
+        <p>
+            Interior Design • Home • Lifestyle
+        </p>
+
+        <div class="copyright">
+            © 2026 Lumière Interior. Created for Academic Project – Laudon 4-10.
+        </div>
+
+    </footer>
+
+</body>
+</html>
